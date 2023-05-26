@@ -1,7 +1,8 @@
 //declaracion de variables
 var contenidoTablaResultado = document.querySelector("#resultados");
 var contenidoListaGrupos = document.querySelector("#listaGrupos");
-var contenidoEditarListaGrupos = document.querySelector("#EditarListaGrupos");
+var contenidoEditarListaGrupos=document.querySelector("#editarListaGrupos");
+var contenidoListaSexo = document.querySelector("#editarSexo");
 function cargarDatos() {
   fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaEstudiantes.php")
     .then((respuesta) => respuesta.json()) //recibe los datos em formato json
@@ -63,20 +64,29 @@ function pintarSelect() {
 function setSelect(datos) {
   for (const valor of datos) {
     contenidoListaGrupos.innerHTML +=
+    `
+    <option value="${valor.id}">${valor.nombre}</option>
+    `;
+  }
+  for (const valor of datos) {
+    contenidoEditarListaGrupos.innerHTML +=
       `
     <option value="${valor.id}">${valor.nombre}</option>
     `;
+  }
+  setSexosNuevos();
+}
+//función para pintar los sexos que no existen el select de sexo
+function setSexoNuevo(){
+  var sexo = document.getElementById('editarSexo').value;
+  if(sexo!='Femenino'&& sexo!='Masculino'&& sexo!='Indefinido') {
+    contenidoListaSexo.innerHTML +=
+    `
+    <option value="${sexo}">${sexo}</option>
+    `
   }
 }
 
-function setGrupoEstudiante(datos) {
-  for (const valor of datos) {
-    contenidoListaGrupos.innerHTML +=
-      `
-    <option value="${valor.id}">${valor.nombre}</option>
-    `;
-  }
-}
 //////////////////////////////////////////////////////////////
 
 function actualizarPagina() {
@@ -90,13 +100,13 @@ function detalles(
   telefono, telefonocelular,
   fechanacimiento, sexo, direccion,
   nombre, apellidopaterno, apellidomaterno,
-  nacionalidad, idCarreras, usuario,
+  nacionalidad, idCarreras, usuario
 ) {
 
   const myModal = new bootstrap.Modal(document.getElementById('modalDetalles'));
   myModal.show();
   document.getElementById('detallesId').value = id;
-  document.getElementById('detallesCedeula').value = cedula;
+  document.getElementById('detallesCedula').value = cedula;
   document.getElementById('detallesCorreo').value = correoelectronico;
   document.getElementById('detallesTel').value = telefono;
   document.getElementById('detallesTelCel').value = telefonocelular;
@@ -120,7 +130,7 @@ function crear() {
     e.preventDefault();
 
     var datosEnviar = {
-      cedula: document.getElementById('crearCedeula').value,
+      cedula: document.getElementById('crearCedula').value,
       correoelectronico: document.getElementById('crearCorreo').value,
       telefono: document.getElementById('crearTel').value,
       telefonocelular: document.getElementById('crearTelCel').value,
@@ -151,8 +161,9 @@ function crear() {
     actualizarPagina();
   })
 }// fin de la función crear
-const modalDelete = new bootstrap.Modal(document.getElementById('modalBorrar'));
+
 function borrar(id,cedula, nombre) {
+  const modalDelete = new bootstrap.Modal(document.getElementById('modalBorrar'));
   modalDelete.show();
   document.getElementById('borrarId').value = id;
   document.getElementById('borrarCedula').value = cedula;
@@ -204,7 +215,7 @@ function editar(
   document.getElementById('editarAPaterno').value = apellidopaterno;
   document.getElementById('editarAMAterno').value = apellidomaterno;
   document.getElementById('editarNacionalidad').value = nacionalidad;
-  document.getElementById('listaGrupos').value = idCarreras;
+  document.getElementById('editarListaGrupos').value = idCarreras;
   document.getElementById('editarUsuario').value = usuario;
 
   var formulario = document.getElementById('formularioEditar');
@@ -224,7 +235,7 @@ function editar(
       apellidopaterno: document.getElementById('editarAPaterno').value,
       apellidomaterno: document.getElementById('editarAMAterno').value,
       nacionalidad: document.getElementById('editarNacionalidad').value,
-      idCarreras: document.getElementById('listaGrupos').value,
+      idCarreras: document.getElementById('editarListaGrupos').value,
       usuario: document.getElementById('editarUsuario').value
     }
 

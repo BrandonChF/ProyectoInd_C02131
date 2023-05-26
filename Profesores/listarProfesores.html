@@ -30,20 +30,17 @@
             </caption>
             <tr>
               <th>ID</th>
-              <th>Céudula</th>
+              <th>Cédula</th>
               <th>Correo Electrónico</th>
               <th>Teléfono</th>
               <th>Teléfono Celular</th>          
               <th>Fecha de Nacimiento</th>
               <th>Sexo</th>
-              <th>Dirección</th>
               <th>Nombre</th>
               <th>Apellido Paterno</th>
               <th>Apellido Materno</th>
               <th>Nacionalidad</th>
-              <th>Id Carreras</th>
-              <th>Usuario</th>
-              <th>nacionalidad</th>
+              <th>usuario</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -55,6 +52,378 @@
     <footer id="contenidoPie">
       <!-- place footer here -->
     </footer>
+  </div>
+
+<!-- Modales -->
+
+  <!-- Modal detalles -->
+  <div id="modalDetalles" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detalles de los Estudiantes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="formularioDetalles">
+            <div class="row justify-content-center align-items-center g-2 container-fluid">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="" class="form-label">Id</label>
+                  <input type="text" class="form-control" name="mombre" id="detallesId" aria-describedby="helpId"
+                    placeholder="Ingrese el nombre" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Cédula</label>
+                  <input type="text" class="form-control" name="descripcion" id="detallesCedula"
+                    aria-describedby="helpId" placeholder="Ingrese la descripcion" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Correo Electónico</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesCorreo" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Teléfono</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesTel" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Teléfono Celular</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesTelCel" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Fecha de Nacimiento</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesFechaNa" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Sexo</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesSexo" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion" required disabled>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="" class="form-label">Dirección</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesDireccion" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesNombre" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Apellido Paterno</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesAPaterno" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Apellido Materno</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesAMAterno" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Nacionalidad</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesNacionalidad"
+                    aria-describedby="helpId" placeholder="Ingrese la descripcion" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Id Grupo</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesIdCarreras"
+                    aria-describedby="helpId" placeholder="Ingrese la descripcion" required disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Usuario</label>
+                  <input type="text" class="form-control" name="tiempo" id="detallesUsuario" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion" required disabled>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Modal detalles -->
+
+  <!-- Modal crear -->
+  <div id="modalCrear" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Registrar Estudiantes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="formularioCrear">
+            <div class="row justify-content-center align-items-center g-2 container-fluid">
+              <div class="col">
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Cédula</label>
+                  <input type="text" class="form-control" name="descripcion" id="crearCedula" aria-describedby="helpId"
+                    placeholder="Ingrese la cédula" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Correo Electónico</label>
+                  <input type="email" class="form-control" name="tiempo" id="crearCorreo" aria-describedby="helpId"
+                    placeholder="Ingrese el correo" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Teléfono</label>
+                  <input type="number" class="form-control" name=" tel" id="crearTel" aria-describedby="helpId"
+                    placeholder="Ingrese el teléfono" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Teléfono Celular</label>
+                  <input type="number" class="form-control" name="tiempo" id="crearTelCel" aria-describedby="helpId"
+                    placeholder="Ingrese el teléfono celular" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Fecha de Nacimiento</label>
+                  <input type="date" class="form-control" name="tiempo" id="crearFechaNa" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Sexo</label>
+                  <select class="form-select" aria-label="Default select example" id="crearSexo">
+                    <option selected disabled>Escoja una opción</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Indefinido">Indefinido</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Dirección</label>
+                  <input type="text" class="form-control" name="tiempo" id="crearDireccion" aria-describedby="helpId"
+                    placeholder="Ingrese la dirección" required>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="tiempo" id="crearNombre" aria-describedby="helpId"
+                    placeholder="Ingrese el nombre" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Apellido Paterno</label>
+                  <input type="text" class="form-control" name="tiempo" id="crearAPaterno" aria-describedby="helpId"
+                    placeholder="Ingrese el apellio paterno" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Apellido Materno</label>
+                  <input type="text" class="form-control" name="tiempo" id="crearAMAterno" aria-describedby="helpId"
+                    placeholder="Ingrese el apellido materno" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Nacionalidad</label>
+                  <input type="text" class="form-control" name="tiempo" id="crearNacionalidad" aria-describedby="helpId"
+                    placeholder="Ingrese la nacionalidad" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Grupo</label>
+                  <select class="form-select" aria-label="Default select example" id="listaGrupos" name="listaGrupos">
+                    <option selected disabled>Escoja un grupo</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <button type="reset" class="btn btn-danger">Limpiar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin Modal crear -->
+
+  <!-- Modal editar -->
+  <div id="modalEditar" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edite los datos del estudiante</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="formularioEditar">
+            <div class="row justify-content-center align-items-center g-2 container-fluid">
+              <div class="col">
+
+                <div class="mb-3" hidden>
+                  <label for="" class="form-label">Id</label>
+                  <input type="text" class="form-control" name="descripcion" id="editarId" aria-describedby="helpId"
+                    placeholder="Ingrese el ID">
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Cédula</label>
+                  <input type="text" class="form-control" name="descripcion" id="editarCedula" aria-describedby="helpId"
+                    placeholder="Ingrese la cédula">
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Correo Electónico</label>
+                  <input type="email" class="form-control" name="tiempo" id="editarCorreo" aria-describedby="helpId"
+                    placeholder="Ingrese el correo">
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Teléfono</label>
+                  <input type="number" class="form-control" name="tiempo" id="editarTel" aria-describedby="helpId"
+                    placeholder="Ingrese el teléfono">
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Teléfono Celular</label>
+                  <input type="number" class="form-control" name="tiempo" id="editarTelCel" aria-describedby="helpId"
+                    placeholder="Ingrese el teléfono celular">
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Fecha de Nacimiento</label>
+                  <input type="date" class="form-control" name="tiempo" id="editarFechaNa" aria-describedby="helpId"
+                    placeholder="Ingrese la descripcion">
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Sexo</label>
+                  <select class="form-select" aria-label="Default select example" id="editarSexo">
+                    <option selected disabled>Escoja una opción</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Femenino">Masculino</option>
+                    <option value="Indefinido">Indefinido</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Dirección</label>
+                  <input type="text" class="form-control" name="tiempo" id="editarDireccion" aria-describedby="helpId"
+                    placeholder="Ingrese la dirección">
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="tiempo" id="editarNombre" aria-describedby="helpId"
+                    placeholder="Ingrese el nombre">
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Apellido Paterno</label>
+                  <input type="text" class="form-control" name="tiempo" id="editarAPaterno" aria-describedby="helpId"
+                    placeholder="Ingrese el apellio paterno">
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Apellido Materno</label>
+                  <input type="text" class="form-control" name="tiempo" id="editarAMAterno" aria-describedby="helpId"
+                    placeholder="Ingrese el apellido materno">
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Nacionalidad</label>
+                  <input type="text" class="form-control" name="tiempo" id="editarNacionalidad"
+                    aria-describedby="helpId" placeholder="Ingrese la nacionalidad">
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Grupo</label>
+                  <select class="form-select" aria-label="Default select example" id="editarListaGrupos" name="listaGrupos">
+                    <option selected disabled>Escoja un grupo</option>
+                  </select>
+                </div>
+
+                <div class="mb-3" hidden>
+                  <label for="" class="form-label">Usuario</label>
+                  <input type="text" class="form-control" name="tiempo" id="editarUsuario" aria-describedby="helpId"
+                    placeholder="Ingrese el usuario">
+                </div>
+
+              </div>
+            </div>
+            <button type="reset" class="btn btn-danger">Limpiar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Modal editar -->
+
+  <!-- Fin de los Modales -->
+
+  <div id="modalBorrar" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">¿Desea eliminar este estudiante?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="formularioBorrar">
+              <div class="mb-3">
+                <label for="" class="form-label">ID</label>
+                <input type="text" class="form-control" id="borrarId" aria-describedby="helpId"
+                  placeholder="Ingrese el ID" required disabled>
+              </div>
+
+              <div class="mb-3">
+                <label for="" class="form-label">Cédula</label>
+                <input type="text" class="form-control" id="borrarCedula" aria-describedby="helpId"
+                  placeholder="Ingrese la cédula" required disabled>
+              </div>
+
+              <div class="mb-3">
+                <label for="" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="borraNombre" aria-describedby="helpId"
+                  placeholder="Ingrese el nombre" required disabled>
+              </div>
+
+              <button type="submit" class="btn btn-danger">Borrar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
   </div>
   
   <!-- Bootstrap JavaScript Libraries -->

@@ -30,7 +30,7 @@
             </caption>
             <tr>
               <th>ID</th>
-              <th>Céudula</th>
+              <th>Cédula</th>
               <th>Correo Electrónico</th>
               <th>Teléfono</th>
               <th>Teléfono Celular</th>
@@ -80,7 +80,7 @@
 
                 <div class="mb-3">
                   <label for="" class="form-label">Cedeula</label>
-                  <input type="text" class="form-control" name="descripcion" id="detallesCedeula"
+                  <input type="text" class="form-control" name="descripcion" id="detallesCedula"
                     aria-describedby="helpId" placeholder="Ingrese la descripcion" required disabled>
                 </div>
 
@@ -202,13 +202,13 @@
 
                 <div class="mb-3">
                   <label for="" class="form-label">Teléfono</label>
-                  <input type="tel" class="form-control" name="tiempo" id="editarTel" aria-describedby="helpId"
+                  <input type="number" class="form-control" name="tiempo" id="editarTel" aria-describedby="helpId"
                     placeholder="Ingrese el teléfono">
                 </div>
 
                 <div class="mb-3">
                   <label for="" class="form-label">Teléfono Celular</label>
-                  <input type="tel" class="form-control" name="tiempo" id="editarTelCel" aria-describedby="helpId"
+                  <input type="number" class="form-control" name="tiempo" id="editarTelCel" aria-describedby="helpId"
                     placeholder="Ingrese el teléfono celular">
                 </div>
 
@@ -223,7 +223,7 @@
                   <select class="form-select" aria-label="Default select example" id="editarSexo">
                     <option selected disabled>Escoja una opción</option>
                     <option value="Femenino">Femenino</option>
-                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Masculino</option>
                     <option value="Indefinido">Indefinido</option>
                   </select>
                 </div>
@@ -260,7 +260,7 @@
 
                 <div class="mb-3">
                   <label for="" class="form-label">Grupo</label>
-                  <select class="form-select" aria-label="Default select example" id="listaGrupos" name="listaGrupos">
+                  <select class="form-select" aria-label="Default select example" id="editarListaGrupos" name="listaGrupos">
                     <option selected disabled>Escoja un grupo</option>
                   </select>
                 </div>
@@ -297,7 +297,7 @@
 
           <form id="formularioBorrar">
               <div class="mb-3">
-                <label for="" class="form-label">Cédula</label>
+                <label for="" class="form-label">ID</label>
                 <input type="text" class="form-control" id="borrarId" aria-describedby="helpId"
                   placeholder="Ingrese el ID" required disabled>
               </div>
@@ -340,8 +340,8 @@
               <div class="col">
 
                 <div class="mb-3">
-                  <label for="" class="form-label">Cédeula</label>
-                  <input type="text" class="form-control" name="descripcion" id="crearCedeula" aria-describedby="helpId"
+                  <label for="" class="form-label">Cédula</label>
+                  <input type="text" class="form-control" name="descripcion" id="crearCedula" aria-describedby="helpId"
                     placeholder="Ingrese la cédula" required>
                 </div>
 
@@ -353,13 +353,13 @@
 
                 <div class="mb-3">
                   <label for="" class="form-label">Teléfono</label>
-                  <input type="tel" class="form-control" name="tiempo" id="crearTel" aria-describedby="helpId"
+                  <input type="number" class="form-control" name="tiempo" id="crearTel" aria-describedby="helpId"
                     placeholder="Ingrese el teléfono" required>
                 </div>
 
                 <div class="mb-3">
                   <label for="" class="form-label">Teléfono Celular</label>
-                  <input type="tel" class="form-control" name="tiempo" id="crearTelCel" aria-describedby="helpId"
+                  <input type="number" class="form-control" name="tiempo" id="crearTelCel" aria-describedby="helpId"
                     placeholder="Ingrese el teléfono celular" required>
                 </div>
 

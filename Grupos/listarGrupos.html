@@ -42,8 +42,143 @@
     <footer id="contenidoPie">
       <!-- place footer here -->
     </footer>
+
+    <!-- Modales -->
+
+    <!-- Modal detalles -->
+    <div id="modalDetalles" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Detalles de los </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <form id="formularioDetalles">
+
+              <div class="mb-3">
+                <label for="" class="form-label">Id Grupo</label>
+                <input type="text" class="form-control" name="tiempo" id="detallesId" aria-describedby="helpId"
+                  placeholder="Ingrese la descripcion" required disabled>
+              </div>
+
+              <div class="mb-3">
+                <label for="" class="form-label"> Nombre grupo</label>
+                <input type="text" class="form-control" name="tiempo" id="detallesNombre" aria-describedby="helpId"
+                  placeholder="Ingrese la descripcion" required disabled>
+              </div>
+          </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  <!-- Fin Modal detalles -->
+
+  <!-- Modal crear -->
+  <div id="modalCrear" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detalles de los </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="formularioCrear">
+
+            <div class="mb-3">
+              <label for="" class="form-label"> Nombre grupo</label>
+              <input type="text" class="form-control" name="tiempo" id="crearNombre" aria-describedby="helpId"
+                placeholder="Ingrese el nombre del grupo" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
   </div>
-  <!-- {"id":"377","nombre":"hola leo","descripcion":"sdsd","tiempo":"asasa"}, -->
+  <!-- Fin Modal crear -->
+
+  <!-- Modal editar -->
+  <div id="modalEditar" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detalles de los grupos </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="formularioEditar">
+
+            <div class="mb-3" hidden>
+              <label for="" class="form-label"> ID</label>
+              <input type="text" class="form-control" name="tiempo" id="editarId" aria-describedby="helpId"
+                placeholder="Ingrese la descripcion" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="" class="form-label"> Nombre grupo</label>
+              <input type="text" class="form-control" name="tiempo" id="editarNombre" aria-describedby="helpId"
+                placeholder="Ingrese la descripcion" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Modal editar -->
+
+  <!-- Modal eliminar -->
+  <div id="modalBorrar" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detalles de los </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="formularioBorrar">
+
+            <div class="mb-3">
+              <label for="" class="form-label">Id Grupo</label>
+              <input type="text" class="form-control" name="tiempo" id="borrarId" aria-describedby="helpId"
+                placeholder="Ingrese la descripcion" required disabled>
+            </div>
+
+            <div class="mb-3">
+              <label for="" class="form-label"> Nombre grupo</label>
+              <input type="text" class="form-control" name="tiempo" id="borrarNombre" aria-describedby="helpId"
+                placeholder="Ingrese la descripcion" required disabled>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Borrar</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+<!-- Fin Modal eliminar -->
+
+  <!-- fin de los Modales -->
+  
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -55,9 +190,9 @@
 
 
 
-    <script src="/Footer y NavBar.js"></script>
+  <script src="/Footer y NavBar.js"></script>
 
-   
+
   <script src="gruposController.js"></script>
 </body>
 

@@ -1,8 +1,30 @@
 <!doctype html>
 <html lang="en">
 
+<style>
+    #pagMain {
+        background-image: url("https://th.bing.com/th/id/OIG.1lkVaGy7KXa9ht.u2zNE?pid=ImgGn");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: rgb(41, 41, 40);
+    }
+
+
+    .carousel-inner>.item>img,
+    .carousel-inner>.item>a>img {
+        width: 50%;
+        height: 500px;
+        margin: auto;
+    }
+
+    /* Para los margenes del contendor de las fotos. Podes cambiarle el ancho a gusto tambien! */
+    .carousel-control {
+        width: 10%;
+    }
+</style>
+
 <head>
-    <title>Title</title>
+    <title>Index</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,14 +33,106 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 
 <body>
     <header>
         <!-- place navbar here -->
-        <div id="contenidoMenu"></div>
+        <div id="contenidoMenu">
+
+        </div>
     </header>
     <main>
+        <div>
+
+            <div class="row justify-content-center align-items-center 
+            g-2 colorLetras">
+                <div class="col mx-4">
+                    <div style="text-align:end;">
+                        <a href="http://linkedin.com/in/brandon-chavarría-806901226" class="btn btn-dark active btn-lg" role="button">
+                            <i class="bi bi-linkedin" style="font-size: 60px;"></i>
+                            
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <h1>Brandon Chavarría Fuentes C02131</h1>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="text-align:end;">
+                        <a href="http://linkedin.com/in/brandon-chavarría-806901226" class="btn btn-dark active btn-lg" role="button">
+                            <i class="bi bi-github"style="font-size: 60px;"></i>
+                            
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="col mx-4">
+                    <div class="ml-3">
+                        <h1>Proyecto Individual</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contai  ner">
+                <br>
+                <div id="carrusel" class="carousel slide" data-ride="carousel">
+
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#carrusel" data-slide-to="0" class="active"></li>
+                        <li data-target="#carrusel" data-slide-to="1"></li>
+                        <li data-target="#carrusel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Contenedor de las fotos -->
+                    <div class="carousel-inner" role="listbox">
+
+                        <!-- Foto 1 -->
+                        <div class="item active">
+                            <img
+                                src="http://4.bp.blogspot.com/-_nHaa6uP40w/UQfDTi8e0bI/AAAAAAAAerU/OtmyUPDBPMA/s1600/mountains-wallpaper-6.jpg">
+                        </div>
+
+                        <!-- Foto 2 -->
+                        <div class="item">
+                            <img
+                                src="http://3.bp.blogspot.com/-3OaZaBQcHMA/UQfHBsAKH7I/AAAAAAAAfUw/iSuv21iJ7kI/s1600/friendly-little-bear-mountains.jpg">
+                        </div>
+
+                        <!-- Foto 3 -->
+                        <div class="item">
+                            <img src="https://c1.staticflickr.com/7/6236/6233434292_19ae1f1179_b.jpg">
+                        </div>
+
+                    </div>
+
+                    <!-- Controles para pasar las fotos -->
+                    <a class="left carousel-control" href="#carrusel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carrusel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
     </main>
     <footer id="contenidoPie">

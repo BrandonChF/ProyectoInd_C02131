@@ -33,7 +33,7 @@
               <th>Cédula</th>
               <th>Correo Electrónico</th>
               <th>Teléfono</th>
-              <th>Teléfono Celular</th>          
+              <th>Teléfono Celular</th>
               <th>Fecha de Nacimiento</th>
               <th>Sexo</th>
               <th>Nombre</th>
@@ -54,14 +54,14 @@
     </footer>
   </div>
 
-<!-- Modales -->
+  <!-- Modales -->
 
   <!-- Modal detalles -->
-  <div id="modalDetalles" class="modal" tabindex="-1">
+  <div id="modalDetalles" class="modal fade" tabindex="-1" data-bs-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Detalles de los Estudiantes</h5>
+          <h5 class="modal-title">Detalles del profesor</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -166,11 +166,11 @@
   <!-- Fin Modal detalles -->
 
   <!-- Modal crear -->
-  <div id="modalCrear" class="modal" tabindex="-1">
+  <div id="modalCrear" class="modal fade" tabindex="-1" data-bs-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Registrar Estudiantes</h5>
+          <h5 class="modal-title">Registrar Profesor</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -211,8 +211,8 @@
 
                 <div class="mb-3">
                   <label for="" class="form-label">Sexo</label>
-                  <select class="form-select" aria-label="Default select example" id="crearSexo">
-                    <option selected disabled>Escoja una opción</option>
+                  <select class="form-select" aria-label="Default select example" id="crearSexo" required>
+                    <option value="" selected disabled>Escoja una opción</option>
                     <option value="Femenino">Femenino</option>
                     <option value="Masculino">Masculino</option>
                     <option value="Indefinido">Indefinido</option>
@@ -251,8 +251,9 @@
 
                 <div class="mb-3">
                   <label for="" class="form-label">Grupo</label>
-                  <select class="form-select" aria-label="Default select example" id="listaGrupos" name="listaGrupos">
-                    <option selected disabled>Escoja un grupo</option>
+                  <select class="form-select" aria-label="Default select example" id="listaGrupos" name="listaGrupos"
+                    required>
+                    <option value="" selected disabled>Escoja un grupo</option>
                   </select>
                 </div>
               </div>
@@ -260,9 +261,14 @@
             <button type="reset" class="btn btn-danger">Limpiar</button>
             <button type="submit" class="btn btn-primary">Guardar</button>
           </form>
+
+          <!-- toast crear -->
+          <div id="contenidoAlertaCrear">
+          </div>
+          <!-- Fin toast crear -->
         </div>
+
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
@@ -270,11 +276,11 @@
   <!-- fin Modal crear -->
 
   <!-- Modal editar -->
-  <div id="modalEditar" class="modal" tabindex="-1">
+  <div id="modalEditar" class="modal fade" tabindex="-1" data-bs-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edite los datos del estudiante</h5>
+          <h5 class="modal-title">Editar profesor</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -321,13 +327,14 @@
 
                 <div class="mb-3">
                   <label for="" class="form-label">Sexo</label>
-                  <select class="form-select" aria-label="Default select example" id="editarSexo">
+                  <select class="form-select" aria-label="Default select example" id="editarSexo" required>
                     <option selected disabled>Escoja una opción</option>
                     <option value="Femenino">Femenino</option>
-                    <option value="Femenino">Masculino</option>
+                    <option value="Masculino">Masculino</option>
                     <option value="Indefinido">Indefinido</option>
                   </select>
                 </div>
+
                 <div class="mb-3">
                   <label for="" class="form-label">Dirección</label>
                   <input type="text" class="form-control" name="tiempo" id="editarDireccion" aria-describedby="helpId"
@@ -361,7 +368,8 @@
 
                 <div class="mb-3">
                   <label for="" class="form-label">Grupo</label>
-                  <select class="form-select" aria-label="Default select example" id="editarListaGrupos" name="listaGrupos">
+                  <select class="form-select" aria-label="Default select example" id="editarListaGrupos"
+                    name="listaGrupos" required>
                     <option selected disabled>Escoja un grupo</option>
                   </select>
                 </div>
@@ -377,9 +385,13 @@
             <button type="reset" class="btn btn-danger">Limpiar</button>
             <button type="submit" class="btn btn-primary">Guardar</button>
           </form>
+
+          <!-- toast Editar -->
+          <div id="contenidoAlertaEditar">
+          </div>
+          <!-- Fin toast Editar -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
@@ -388,44 +400,48 @@
 
   <!-- Fin de los Modales -->
 
-  <div id="modalBorrar" class="modal" tabindex="-1">
+  <div id="modalBorrar" class="modal fade" tabindex="-1" data-bs-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">¿Desea eliminar este estudiante?</h5>
+          <h5 class="modal-title">¿Desea eliminar este profesor?</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
 
           <form id="formularioBorrar">
-              <div class="mb-3">
-                <label for="" class="form-label">ID</label>
-                <input type="text" class="form-control" id="borrarId" aria-describedby="helpId"
-                  placeholder="Ingrese el ID" required disabled>
-              </div>
+            <div class="mb-3">
+              <label for="" class="form-label">ID</label>
+              <input type="text" class="form-control" id="borrarId" aria-describedby="helpId"
+                placeholder="Ingrese el ID" required disabled>
+            </div>
 
-              <div class="mb-3">
-                <label for="" class="form-label">Cédula</label>
-                <input type="text" class="form-control" id="borrarCedula" aria-describedby="helpId"
-                  placeholder="Ingrese la cédula" required disabled>
-              </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Cédula</label>
+              <input type="text" class="form-control" id="borrarCedula" aria-describedby="helpId"
+                placeholder="Ingrese la cédula" required disabled>
+            </div>
 
-              <div class="mb-3">
-                <label for="" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="borraNombre" aria-describedby="helpId"
-                  placeholder="Ingrese el nombre" required disabled>
-              </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="borraNombre" aria-describedby="helpId"
+                placeholder="Ingrese el nombre" required disabled>
+            </div>
 
-              <button type="submit" class="btn btn-danger">Borrar</button>
+            <button type="submit" class="btn btn-danger">Borrar</button>
           </form>
+
+           <!-- toast borrar -->
+          <div id="contenidoAlertaBorrar">
+          </div>
+          <!-- Fin toast borrar -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
   </div>
-  
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -436,7 +452,8 @@
     crossorigin="anonymous"></script>
 
 
-    <script src="/Footer y NavBar.js"></script>
+  <script src="/Footer y NavBar.js"></script>
+  <script src="/toastAlertas.js"></script>
 
 
   <script src="profesoresController.js"></script>

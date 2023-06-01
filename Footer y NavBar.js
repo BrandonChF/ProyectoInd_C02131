@@ -1,5 +1,6 @@
 var Navbar = document.querySelector('#navId')
 var footer = document.querySelector('#footer')
+//var alertaExito= document.querySelector()
 contenidoMenu.innerHTML += `
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -23,9 +24,7 @@ contenidoMenu.innerHTML += `
               <li class="nav-item">
                 <a class="nav-link" href="/Grupos/listarGrupos.html">Grupos</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link " href="/Usuarios/listarUsuarios.html">Usuarios</a>
-              </li>
+             
               </li>
             </ul>
 

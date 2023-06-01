@@ -1,7 +1,7 @@
 //declaracion de variables
 var contenidoTablaResultado = document.querySelector("#resultados");
 var contenidoListaGrupos = document.querySelector("#listaGrupos");
-var contenidoEditarListaGrupos=document.querySelector("#editarListaGrupos");
+var contenidoEditarListaGrupos = document.querySelector("#editarListaGrupos");
 var contenidoListaSexo = document.querySelector("#editarSexo");
 function cargarDatos() {
   fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaEstudiantes.php")
@@ -64,7 +64,7 @@ function pintarSelect() {
 function setSelect(datos) {
   for (const valor of datos) {
     contenidoListaGrupos.innerHTML +=
-    `
+      `
     <option value="${valor.id}">${valor.nombre}</option>
     `;
   }
@@ -77,11 +77,11 @@ function setSelect(datos) {
   setSexosNuevos();
 }
 //función para pintar los sexos que no existen el select de sexo
-function setSexoNuevo(){
+function setSexoNuevo() {
   var sexo = document.getElementById('editarSexo').value;
-  if(sexo!='Femenino'&& sexo!='Masculino'&& sexo!='Indefinido') {
+  if (sexo != 'Femenino' && sexo != 'Masculino' && sexo != 'Indefinido') {
     contenidoListaSexo.innerHTML +=
-    `
+      `
     <option value="${sexo}">${sexo}</option>
     `
   }
@@ -157,12 +157,17 @@ function crear() {
         // console.log('Datos', datosrespuesta.data);
       })
       .catch(console.log);
-    alert('Estudiante registrado correctamente');
-    actualizarPagina();
+
+    const toastLiveExample = document.getElementById('alertaCrear');
+    const toast = new bootstrap.Toast(toastLiveExample);
+    toast.show();
+    const btnClose = document.getElementById('btnCloseI');
+    btnClose.onclick = () => actualizarPagina();
+    
   })
 }// fin de la función crear
 
-function borrar(id,cedula, nombre) {
+function borrar(id, cedula, nombre) {
   const modalDelete = new bootstrap.Modal(document.getElementById('modalBorrar'));
   modalDelete.show();
   document.getElementById('borrarId').value = id;
@@ -171,31 +176,35 @@ function borrar(id,cedula, nombre) {
 
 
   var formulario = document.getElementById('formularioBorrar');
-    formulario.addEventListener('submit', function (e) {
+  formulario.addEventListener('submit', function (e) {
 
-  var datosEnviar = {
-       id: id
-     }
+    var datosEnviar = {
+      id: id
+    }
 
-     fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarEstudiantes.php", {
-       method: 'POST',
+    fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarEstudiantes.php", {
+      method: 'POST',
       body: JSON.stringify(datosEnviar)
-     })
-       .then((respuesta) => respuesta.json()) //recibe los datos em formato json
-       .then((datosrespuesta) => {
-         //lo envio a la funcion de abajo
-       console.log('Datos', datosrespuesta.data);
-     })
-     e.preventDefault();
-     actualizarPagina();
+    })
+      .then((respuesta) => respuesta.json()) //recibe los datos em formato json
+      .then((datosrespuesta) => {
+        //lo envio a la funcion de abajo
+        console.log('Datos', datosrespuesta.data);
+      })
+    e.preventDefault();
 
-     alert('El estudiante se eliminó correctamente')
-   })
+    const toastLiveExample = document.getElementById('alertaBorrar');
+    const toast = new bootstrap.Toast(toastLiveExample);
+    toast.show();
+    const btnClose = document.getElementById('btnCloseB');
+    btnClose.onclick = () => actualizarPagina();
+    
+  })
 
 } // fin de la función borrar
 
 function editar(
-  id,cedula, correoelectronico,
+  id, cedula, correoelectronico,
   telefono, telefonocelular,
   fechanacimiento, sexo, direccion,
   nombre, apellidopaterno, apellidomaterno,
@@ -251,8 +260,11 @@ function editar(
         // console.log('Datos', datosrespuesta.data);
       })
       .catch(console.log);
-    alert('Estudiante actualizado correctamente');
-    actualizarPagina();
+    const toastLiveExample = document.getElementById('alertaEditar');
+    const toast = new bootstrap.Toast(toastLiveExample);
+    toast.show();
+    const btnClose = document.getElementById('btnCloseE');
+    btnClose.onclick = () => actualizarPagina();
   })
 
 }// fin de la función editar

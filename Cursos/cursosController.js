@@ -43,19 +43,7 @@ function actualizarPagina() {
   }, 100);
 }// fin de la función actualizar pagina
 
-function desplegarAlerta(colorAlerta, textoAlerta) {
-  //const mensajeAlerta = new bootstrap.Modal(document.getElementById('mensajeAlerta'));
-  var mensajeAlerta = document.querySelector("#mensajeAlerta");
-  //var alerta = '<div class="alert alert-' + colorAlerta + '" role="alert">' + textoAlerta + '</div>';
-  var alerta = '<div class="alert alert-'+colorAlerta+' alert-dismissible fade show" role="alert">'
-    +textoAlerta+'<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" id="btnAlerta"></button></div>'
-    alertaMensaje = new bootstrap.alert(alerta);
-    alertaMensaje.show();
-    alerta.onclick=() => actualizarPagina();
-  
-  //mensajeAlerta.innerHTML='<div class="alert alert-'+colorAlert+'" role="alert">'+textoAlerta+'</div>';
-  //mensajeAlerta.show();
-}
+
 
 
 function borrar(id, nombre) {
@@ -66,7 +54,7 @@ function borrar(id, nombre) {
   document.getElementById('nombreBorrar').value = nombre;
   cAlerta = 'danger';
   tAlerta = 'El curso se eliminó correctamente'
-  
+
   var formulario = document.getElementById('formularioBorrar');
   formulario.addEventListener('submit', function (e) {
 
@@ -83,10 +71,13 @@ function borrar(id, nombre) {
         //lo envio a la funcion de abajo
         console.log('Datos', datosrespuesta.data);
       })
-      e.preventDefault();
-      actualizarPagina();
-    
-    alert('El curso se eliminó correctamente')
+    e.preventDefault();
+
+    const toastLiveExample = document.getElementById('alertaBorrar');
+    const toast = new bootstrap.Toast(toastLiveExample);
+    toast.show();
+    const btnClose = document.getElementById('btnCloseB');
+    btnClose.onclick = () => actualizarPagina();
   })
 
 } // fin de la función borrar
@@ -104,7 +95,7 @@ function editar(id, nombre, descripcion, tiempo, usuario) {
 
   var formulario = document.getElementById('formularioEditar');
   formulario.addEventListener('submit', function (e) {
-
+    e.preventDefault();
 
     var datosEnviar = {
       id: id,
@@ -121,13 +112,18 @@ function editar(id, nombre, descripcion, tiempo, usuario) {
     })
       .then((respuesta) => respuesta.json()) //recibe los datos em formato json
       .then((datosrespuesta) => {
+        console.log('Datos', datosrespuesta.data);
         //lo envio a la funcion de abajo
-        // console.log('Datos', datosrespuesta.data);
+
       })
 
       .catch(console.log);
-    e.preventDefault();
-    actualizarPagina();
+
+    const toastLiveExample = document.getElementById('alertaEditar');
+    const toast = new bootstrap.Toast(toastLiveExample);
+    toast.show();
+    const btnClose = document.getElementById('btnCloseE');
+    btnClose.onclick = () => actualizarPagina();
 
   })
 }//fin de la función editar
@@ -159,8 +155,15 @@ function crear() {
         // console.log('Datos', datosrespuesta.data);
       })
       .catch(console.log);
-    alert('Curso creado');
-    actualizarPagina()
+
+
+
+    const toastLiveExample = document.getElementById('alertaCrear');
+    const toast = new bootstrap.Toast(toastLiveExample);
+    toast.show();
+    const btnClose = document.getElementById('btnCloseI');
+    btnClose.onclick = () => actualizarPagina();
+    
   })
 
 }//fin de la función crear

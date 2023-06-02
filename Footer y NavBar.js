@@ -1,6 +1,4 @@
-var Navbar = document.querySelector('#navId')
-var footer = document.querySelector('#footer')
-//var alertaExito= document.querySelector()
+
 contenidoMenu.innerHTML += `
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

@@ -68,12 +68,19 @@ function crear() {
         // console.log('Datos', datosrespuesta.data);
       })
       .catch(console.log);
-    alert('Grupo registrado correctamente');
-    actualizarPagina();
+
+    const toastLiveExample = document.getElementById('alertaCrear');
+    const toast = new bootstrap.Toast(toastLiveExample);
+    toast.show();
+    const btnClose = document.getElementById('btnCloseI');
+    btnClose.onclick = () => actualizarPagina();
+
+    // alert('Grupo registrado correctamente');
+    // actualizarPagina();
   })
 }// fin de la función crear
 
-function editar(id,nombre) {
+function editar(id, nombre) {
 
   const modalEdit = new bootstrap.Modal(document.getElementById('modalEditar'));
   modalEdit.show();
@@ -101,13 +108,20 @@ function editar(id,nombre) {
         // console.log('Datos', datosrespuesta.data);
       })
       .catch(console.log);
-    alert('Profesosr actualizado correctamente');
-    actualizarPagina();
+
+    const toastLiveExample = document.getElementById('alertaEditar');
+    const toast = new bootstrap.Toast(toastLiveExample);
+    toast.show();
+    const btnClose = document.getElementById('btnCloseE');
+    btnClose.onclick = () => actualizarPagina();
+
+    // alert('Profesosr actualizado correctamente');
+    // actualizarPagina();
   })
 
 }// fin de la función editar
 
-function borrar(id,nombre) {
+function borrar(id, nombre) {
 
   const modalDelete = new bootstrap.Modal(document.getElementById('modalBorrar'));
   modalDelete.show();
@@ -116,29 +130,70 @@ function borrar(id,nombre) {
 
   var formulario = document.getElementById('formularioBorrar');
   formulario.addEventListener('submit', function (e) {
+  
+
+     var datosEnviar = {
+       id: id,
+     }
+
+     fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarGrupo.php", {
+       method: 'POST',
+       body: JSON.stringify(datosEnviar)
+        })
+       .then((respuesta) => respuesta.json()) //recibe los datos em formato json
+       .then((datosrespuesta) => {
+       //lo envio a la funcion de abajo
+        })
+    
     e.preventDefault();
-
-    var datosEnviar = {
-      id: id
-    }
-
-    console.log(datosEnviar);
-
-    fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarGrupo.php", {
-      method: 'POST',
-      body: JSON.stringify(datosEnviar)
-    })
-      .then((respuesta) => respuesta.json()) //recibe los datos em formato json
-      .then((datosrespuesta) => {
-        //lo envio a la funcion de abajo
-        // console.log('Datos', datosrespuesta.data);
-      })
-      .catch(console.log);
-    alert('Grupo borrado correctamente');
-    actualizarPagina();
+    const toastLiveExample = document.getElementById('alertaBorrar');
+    const toast = new bootstrap.Toast(toastLiveExample);
+    toast.show();
+    const btnClose = document.getElementById('btnCloseB');
+    btnClose.onclick = () => actualizarPagina();
   })
 
-}// fin de la función editar
+} // fin de la función borrar
+
+// function borrar(id, nombre) {
+
+//   const modalDelete = new bootstrap.Modal(document.getElementById('modalBorrar'));
+//   modalDelete.show();
+//   document.getElementById('borrarId').value = id;
+//   document.getElementById('borrarNombre').value = nombre;
+
+//   var formulario = document.getElementById('formularioBorrar');
+//   formulario.addEventListener('submit', function (e) {
+    
+
+//     var datosEnviar = {
+//       id: id
+//     }
+
+//     console.log(datosEnviar);
+
+//     fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarGrupo.php", {
+//       method: 'POST',
+//       body: JSON.stringify(datosEnviar)
+//     })
+//       .then((respuesta) => respuesta.json()) //recibe los datos em formato json
+//       .then((datosrespuesta) => {
+//         //lo envio a la funcion de abajo  
+//       })
+      
+//       e.preventDefault();
+      
+//     const toastLiveExample = document.getElementById('alertaBorrar');
+//     const toast = new bootstrap.Toast(toastLiveExample);
+//     toast.show();
+//     const btnClose = document.getElementById('btnCloseB');
+//     btnClose.onclick = () => actualizarPagina();
+
+//      alert('Grupo borrado correctamente');
+//     // actualizarPagina();
+//   })
+
+// }// fin de la función editar
 
 
 cargarDatos();

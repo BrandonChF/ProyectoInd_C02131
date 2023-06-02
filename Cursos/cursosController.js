@@ -52,8 +52,6 @@ function borrar(id, nombre) {
   modalDelete.show();
   document.getElementById('idBorrar').value = id;
   document.getElementById('nombreBorrar').value = nombre;
-  cAlerta = 'danger';
-  tAlerta = 'El curso se eliminó correctamente'
 
   var formulario = document.getElementById('formularioBorrar');
   formulario.addEventListener('submit', function (e) {
@@ -69,7 +67,6 @@ function borrar(id, nombre) {
       .then((respuesta) => respuesta.json()) //recibe los datos em formato json
       .then((datosrespuesta) => {
         //lo envio a la funcion de abajo
-        console.log('Datos', datosrespuesta.data);
       })
     e.preventDefault();
 
@@ -91,11 +88,12 @@ function editar(id, nombre, descripcion, tiempo, usuario) {
   document.getElementById('descripcionModal').value = descripcion;
   document.getElementById('tiempoModal').value = tiempo;
   document.getElementById('usuarioModal').value = usuario;
+  
 
 
   var formulario = document.getElementById('formularioEditar');
   formulario.addEventListener('submit', function (e) {
-    e.preventDefault();
+    
 
     var datosEnviar = {
       id: id,
@@ -119,12 +117,13 @@ function editar(id, nombre, descripcion, tiempo, usuario) {
 
       .catch(console.log);
 
+    
     const toastLiveExample = document.getElementById('alertaEditar');
     const toast = new bootstrap.Toast(toastLiveExample);
     toast.show();
     const btnClose = document.getElementById('btnCloseE');
     btnClose.onclick = () => actualizarPagina();
-
+    e.preventDefault();
   })
 }//fin de la función editar
 
@@ -155,8 +154,6 @@ function crear() {
         // console.log('Datos', datosrespuesta.data);
       })
       .catch(console.log);
-
-
 
     const toastLiveExample = document.getElementById('alertaCrear');
     const toast = new bootstrap.Toast(toastLiveExample);
